@@ -32,7 +32,10 @@ async def on_message(message):
 
     if str(message.content) == "!Shtop":
         try:
+            name = inputs[message.author.id][2]
             del inputs[message.author.id]
+            await message.author.edit(nick=name)
+
         except:
             pass
 
